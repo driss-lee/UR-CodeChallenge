@@ -11,9 +11,9 @@
     <p matLine class="demo-2">{{repo.description}} </p>
 
     <p matLine>
-        <span>  {{repo.stargazers_count}}</span>
-         <span>  {{repo.open_issues_count}}</span>
-      <span class="demo-2 ">  {{repo.created_at}} </span>
+        <i class="fa fa-star"></i> <span>  {{repo.stargazers_count}}</span>
+        <i class="fa fa-exclamation-triangle spacer"></i> <span>  {{repo.open_issues_count}}</span>
+      <span class="demo-2 spacer">  {{repo.created_at}} </span>
       <span> by {{repo.owner.login}}</span>
 
     </p>
