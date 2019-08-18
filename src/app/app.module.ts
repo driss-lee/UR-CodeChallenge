@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+
 
 
 
@@ -21,7 +24,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     AppRoutingModule,
     MatListModule,
     MatCardModule,
-    MatToolbarModule
+    MatToolbarModule,
+    InfiniteScrollModule,
+    ScrollingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

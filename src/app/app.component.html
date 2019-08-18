@@ -1,30 +1,83 @@
 <mat-toolbar>
   <span>List of the most starred Github repos that were created in the last 30 days. </span>
 </mat-toolbar>
-<mat-card>
-<mat-list >
-    
-  <mat-list-item *ngFor="let repo of repositories ">
-    
-    <img matListAvatar src="{{repo.owner.avatar_url}}" alt="owner avatar">
-    <h3 matLine> {{repo.name}} </h3>
-    <p matLine class="demo-2">{{repo.description}} </p>
+ <!-- <mat-card>
+    <!-- <div  infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50"   
+    [scrollWindow]="true" (scrolled)="onScroll()" > 
+        <div  infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()"  
+        [scrollWindow]="true" >
+        <!-- <cdk-virtual-scroll-viewport  style="height: 500px" itemSize="90" > 
+      <div *ngFor="let repo of repositories ">
+        <img  src="{{repo.owner.avatar_url}}" alt="owner avatar">
+        <h3 > {{repo.name}} </h3>
+        <p  class="demo-2">{{repo.description}} </p>
+        <p >
+          <i class="fa fa-star"></i> <span> {{repo.stargazers_count}}</span>
+          <i class="fa fa-exclamation-triangle spacer"></i> <span> {{repo.open_issues_count}}</span>
+          <span class="demo-2 spacer">Submitted {{this.get_days_interval(repo.created_at)}} days ago</span>
+          <span> by {{repo.owner.login}}</span>
+        </p>
 
-    <p matLine>
-        <i class="fa fa-star"></i> <span>  {{repo.stargazers_count}}</span>
-        <i class="fa fa-exclamation-triangle spacer"></i> <span>  {{repo.open_issues_count}}</span>
-      <span class="demo-2 spacer">Submitted {{this.get_days_interval(repo.created_at)}} days ago</span>
-      <span> by {{repo.owner.login}}</span>
+        <mat-divider></mat-divider>
+      </div>
+        </div>
+    <!-- </cdk-virtual-scroll-viewport> 
 
-    </p>
-    <mat-divider></mat-divider>
+</mat-card>   -->
 
-  
-  </mat-list-item>
+<!-- <div  infiniteScroll [infiniteScrollDistance]="0.1" [infiniteScrollUpDistance]="0.1"
+  [infiniteScrollThrottle]="50"   
+  [scrollWindow]="true" (scrolled)="onScroll()"    (scrolledUp)="onScrollUp()"  >
+<mat-card>  
 
-</mat-list>
-</mat-card>
+   
+               <mat-list>
+                  <mat-list-item  class="asd" *ngFor="let repo of repositories ">
+                 
+                      <img matListAvatar src="{{repo.owner.avatar_url}}" alt="owner avatar">
+                      <h3 matLine> {{repo.name}} </h3>
+                      <p matLine class="demo-2">{{repo.description}} </p>
+                      <p matLine>
+                        <i class="fa fa-star"></i> <span> {{repo.stargazers_count}}</span>
+                        <i class="fa fa-exclamation-triangle spacer"></i> <span> {{repo.open_issues_count}}</span>
+                        <span class="demo-2 spacer">Submitted {{this.get_days_interval(repo.created_at)}} days ago</span>
+                        <span> by {{repo.owner.login}}</span>
+                      </p>
+              
+                      <mat-divider></mat-divider>
+                    </mat-list-item> 
+                    <mat-list-item  class="fetch" *ngIf="!isLoading">Fetching Repos...</mat-list-item>
+                 
 
+              
+               </mat-list>
+           
+             
+               
+              
+            
 
+  </mat-card>   
+  </div> -->
+  <div  infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollUpDistance]="2"
+  [infiniteScrollThrottle]="1000"   
+   (scrolled)="onScroll()" (scrolledUp)="onScrollUp()"  >
+  <div *ngFor="let repo of repositories ">
+      <div class="card" >
+          <div class="card-body">
+           <h5 class="card-title">{{repo.name}}</h5>
+           <p class="card-text">{{repo.description}} <br>
+            
+                <i class="fa fa-star"></i> <span> {{repo.stargazers_count}}</span>
+                <i class="fa fa-exclamation-triangle spacer"></i> <span> {{repo.open_issues_count}}</span>
+                <span class="demo-2 spacer">Submitted {{this.get_days_interval(repo.created_at)}} days ago</span>
+                <span> by {{repo.owner.login}}</span>
+             
+          </p>
+         </div>
+         <mat-divider></mat-divider>
 
-
+         </div>
+  </div>
+</div>
+  <div class="fetch" *ngIf="!isLoading">Fetching Repos...</div>
