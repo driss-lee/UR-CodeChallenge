@@ -20,6 +20,7 @@ export class AppComponent {
     this.getRepos()
   }
 
+// Call our repos service, and extract the data the we need,
   getRepos() {
     if (this.isLoading) return
     this.repoService.get_repos(this.page).subscribe((res: any) => {
@@ -29,6 +30,7 @@ export class AppComponent {
     })
   }
 
+  // Get the time lapse between now and when the repository was created
   get_days_interval(createdAt: any): any {
     const createdDate = new Date(createdAt)
     const currentDate = new Date()
@@ -37,6 +39,8 @@ export class AppComponent {
 
     return days
   }
+
+// This functions will get called each time we scroll(up/down).
 
   onScroll() {
     if (this.page < 8) {

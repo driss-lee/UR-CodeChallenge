@@ -14,10 +14,12 @@ import { Observable } from "rxjs";
  
   }
   
+  // Fetch data from github API.
   get_repos(page : number): Observable<any>{
     return this.httpClient.get(this.baseUrl+page);
   }
 
+  // Get the date before 30 day from now.
   get_date_before_30_days() {
 
     const currentDate = new Date();
