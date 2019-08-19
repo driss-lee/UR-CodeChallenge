@@ -1,3 +1,12 @@
+# Technologies used
+- Angular 7 :  is a platform for building mobile and desktop web applications [Link](https://angular.io). 
+
+- Angular Material : is a UI component library for Angular developers [Link](https://material.angular.io). 
+
+- Font Awesome : is a font and icon toolkit based on CSS and LESS [Link](https://fontawesome.com).
+
+- Ngx Infinite Scroll : is a directive that listens to the window scroll event and invoked the callback [Link](https://www.npmjs.com/package/ngx-infinite-scroll).
+
 # ReposApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
